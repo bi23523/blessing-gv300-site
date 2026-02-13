@@ -1,0 +1,84 @@
+---
+title: "GV300 Showcase"
+description: "My favourite quantitative analysis and work"
+output: distill::distill_article
+---
+
+
+This section showcases part of my analysis from GV300 Assignment 2, where I examined inequality inconstituency sizes across the UK.
+
+I utilised official election data. Furthermore, I explored how the number of valid votes differs between counties.
+
+```{r}
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+uk_csv <- "https://electionresults.parliament.uk/general-elections/6/candidacies.csv"
+uk_raw <- readr::read_csv(uk_csv, show_col_types = FALSE)
+names(uk_raw) <- names(uk_raw) %>% tolower() %>% str_replace_all("\\s+", "_")
+```
+
+```{r}
+uk1 <- uk_raw %>%
+  filter(!`election_is_by-election`)
+
+uk2 <- uk1 %>%
+  select(
+    constituency = constituency_name,
+    country      = country_name,
+    valid_votes  = candidate_vote_count,
+    electorate   = electorate
+  )
+
+uk3 <- uk2 %>%
+  group_by(country, constituency) %>%
+  summarise(
+    valid_votes = sum(valid_votes, na.rm = TRUE),
+    electorate  = max(electorate, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+uk <- uk3 %>%
+  mutate(turnout_registered = 100 * valid_votes / electorate) %>%
+  filter(is.finite(turnout_registered), electorate > 0)
+
+```
+
+
+
+
+```{r}
+print(head(uk))
+```
+
+
+
+
+
+
+
+
+
+```{r}
+ggplot(uk, aes(x = valid_votes, fill = country)) +
+  geom_density(alpha = 0.6) +
+  facet_wrap(~ country, ncol = 2) +
+  labs(
+    title = "Distribution of Constituency Sizes by Country",
+    subtitle = "Density plots show the shape of distributions clearly",
+    x = "Number of Valid Votes",
+    y = "Density"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    strip.text = element_text(face = "bold"),
+    legend.position = "none"
+  )
+
+```
+
+
+The density plots show how constituency sizes are distributed within each country. Northern Ireland appears more tightly clustered, meaning constituency sizes are relatively similar. In contrast, England shows a much wider spread, indicating greater variation in the number of valid votes per constituency. This variation has implications for political representation, as differences in constituency size affect the principle of equal voter power. Visualising the distributions makes patterns of inequality clearer than summary statistics alone.

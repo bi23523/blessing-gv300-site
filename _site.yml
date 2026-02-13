@@ -1,0 +1,17 @@
+name: "blessing-gv300-site"
+title: "Blessing Nsita Inno's Webpage"
+description: GV300 portfolio site showcasing quantitative analysis and data visualisation.
+  My Website
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Postcard"
+      href: trestles.html
+    - text: "GV300 Showcase"
+      href: gv300-showcase.html
+    - text: "About Me"
+      href: about.html
+output: distill::distill_article
+

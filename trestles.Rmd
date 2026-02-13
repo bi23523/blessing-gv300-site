@@ -1,0 +1,20 @@
+---
+title: "Blessing-nsita Inno"
+image: "blessing.jpg"
+links:
+  - label: LinkedIn
+    url: "http://linkedin.com/in/blessing-nsita-inno-88072420a"
+  - label: GitHub
+    url: "https://github.com/bi23523"
+  - label: Email
+    url: "mailto:bi23523@essex.ac.uk"
+output:
+  postcards::jolla
+---
+ 
+I am an undergraduate student studying BSc Economics and Politics at the University of Essex. My academic interests involve economic theory, political science and further expanding my knowledge on how economics link to my everyday reality. 
+
+Outside of my studies, I enjoy fitness, exploring new restaurants, and travelling anywhere I possibly can. I am particularly interested in how data and statistical strategies can be used to better understand real-world political decision-making. 
+
+This website was created for GV300 and showcases selected examples of my code and data visualisations from the module.
+

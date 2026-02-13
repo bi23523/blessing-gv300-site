@@ -1,0 +1,31 @@
+---
+title: "Blessing Nsita Inno"
+description: |
+  Personal academic website created for GV300. 
+  Showing selected political quantitative analysis and data visualisation work.
+site: distill::distill_website
+---
+
+# Welcome
+
+Hi, I’m Blessing — thank you for visiting my website.
+
+This site brings together selected pieces of work from my GV300 module, where I explored political data using R and statistical modelling. Rather than simply presenting results, the aim is to show how I think through data: from structuring datasets to interpreting patterns and drawing insightful conclusions.
+
+I’m particularly interested in how quantitative methods can be used to understand political behaviour and representation in real-world contexts. The showcase page highlights one example of this approach in practice.
+
+Feel free to explore using the navigation menu above, have fun.
+
+You can view my featured GV300 showcase using the navigation menu above. Hopefully it runs smoothly!
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+

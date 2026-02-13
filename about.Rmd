@@ -1,0 +1,13 @@
+---
+title: "About this site"
+description: |
+  Some additional details about the website
+---
+
+This website was created as part of the GV300 module to showcase selected pieces of my quantitative work. The aim is to demonstrate how I approach data analysis in R, from cleaning datasets to producing visualisations and interpreting results clearly.
+
+The GV300 Showcase page presents an analysis of electoral participation in the UK using official election data. It highlights how statistical techniques and data visualisation can be used to explore inequality and representation in a meaningful way. All code is embedded directly within the site to ensure transparency and reproducibility.
+
+Overall, this site exhibits the analytical skills I have developed throughout the module, as well as my ability to communicate statistical findings in a clear and accessible manner.
+
+
