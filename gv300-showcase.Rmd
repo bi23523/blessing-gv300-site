@@ -61,7 +61,7 @@ print(head(uk))
 
 
 
-```{r}
+```{r, fig.width=12, fig.height=8}
 ggplot(uk, aes(x = valid_votes, fill = country)) +
   geom_density(alpha = 0.6) +
   facet_wrap(~ country, ncol = 2) +

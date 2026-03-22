@@ -14,7 +14,7 @@ library(tidyr)
 library(dplyr)
 ```
 
-
+Preparing the text
 
 ```{r}
 ## Preparing the text
