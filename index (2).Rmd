@@ -1,0 +1,80 @@
+---
+title: "Text Analysis: Dictionary Approach"
+date: "2026-03-20"
+description: "A simple dictionary approach to political text"
+output: distill::distill_article
+---
+
+This section demonstrates a dictionary-based approach to text analysis using short examples of central bank-style communication. The aim is to show how written political and economic language can be transformed into measurable categories such as uncertainty, inflation, and output. This approach is useful because it allows researchers to compare themes across documents in a systematic and reproducible way.
+
+```{r}
+library(quanteda)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+```
+
+Preparing the text
+
+```{r}
+## Preparing the text
+
+texts <- c(
+  "The central bank noted that inflation remains elevated while economic growth shows signs of slowing and uncertainty remains high.",
+  "Policymakers emphasised that employment levels are improving, although risks to the economic outlook persist.",
+  "The committee highlighted concerns about inflation pressures and adopted a cautious stance given ongoing uncertainty in global markets."
+)
+
+txtCorpus <- corpus(texts)
+tokensFromCorp <- tokens(txtCorpus)
+dfmCorp <- dfm(tokensFromCorp)
+
+topfeatures(dfmCorp, 10)
+
+```
+
+
+Applying a dictionary
+
+
+```{r}
+## Applying a dictionary
+econ_dict <- dictionary(list(
+  uncertainty = c("uncertain", "uncertainty", "risk", "risks", "cautious"),
+  inflation = c("inflation", "price", "cost"),
+  output = c("growth", "output", "employment")
+))
+
+dict_results <- dfm_lookup(dfmCorp, dictionary = econ_dict)
+convert(dict_results, to = "data.frame")
+```
+
+Visualising dictionary categories
+
+```{r, fig.width=10, fig.height=6}
+
+## Visualising dictionary categories
+
+dict_df <- convert(dict_results, to = "data.frame")
+
+names(dict_df)[1] <- "document"
+
+dict_df_long <- dict_df |>
+  pivot_longer(cols = -document, names_to = "category", values_to = "count")
+
+ggplot(dict_df_long, aes(x = category, y = count, fill = category)) +
+  geom_col() +
+  facet_wrap(~ document) +
+  theme_minimal() +
+  labs(
+    title = "Dictionary-based text analysis",
+    x = "Category",
+    y = "Word count"
+  )
+
+
+
+```
+Interpretation
+
+The results show how often different economic themes appear across the sample texts. In particular, words related to uncertainty, inflation, and output can be grouped and counted, allowing written statements to be analysed more systematically. This highlights one of the key strengths of text analysis: it turns qualitative language into quantitative evidence that can be compared across documents.
