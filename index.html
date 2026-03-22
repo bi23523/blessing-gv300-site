@@ -89,29 +89,32 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Blessing Nsita Inno's Webpage: Blessing Nsita Inno</title>
+  <title>Blessing Nsita Inno's Webpage: Text Analysis: Dictionary Approach</title>
 
-  <meta property="description" itemprop="description" content="Personal academic website created for GV300. &#10;Showing selected political quantitative analysis and data visualisation work."/>
+  <meta property="description" itemprop="description" content="A simple dictionary approach to political text"/>
 
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2026-03-20"/>
+  <meta property="article:created" itemprop="dateCreated" content="2026-03-20"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Blessing Nsita Inno&#39;s Webpage: Blessing Nsita Inno"/>
+  <meta property="og:title" content="Blessing Nsita Inno&#39;s Webpage: Text Analysis: Dictionary Approach"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content="Personal academic website created for GV300. &#10;Showing selected political quantitative analysis and data visualisation work."/>
+  <meta property="og:description" content="A simple dictionary approach to political text"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Blessing Nsita Inno&#39;s Webpage"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Blessing Nsita Inno&#39;s Webpage: Blessing Nsita Inno"/>
-  <meta property="twitter:description" content="Personal academic website created for GV300. &#10;Showing selected political quantitative analysis and data visualisation work."/>
+  <meta property="twitter:title" content="Blessing Nsita Inno&#39;s Webpage: Text Analysis: Dictionary Approach"/>
+  <meta property="twitter:description" content="A simple dictionary approach to political text"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","site"]}},"value":[{"type":"character","attributes":{},"value":["Blessing Nsita Inno"]},{"type":"character","attributes":{},"value":["Personal academic website created for GV300. \nShowing selected political quantitative analysis and data visualisation work.\n"]},{"type":"character","attributes":{},"value":["distill::distill_website"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","date","description","output"]}},"value":[{"type":"character","attributes":{},"value":["Text Analysis: Dictionary Approach"]},{"type":"character","attributes":{},"value":["2026-03-20"]},{"type":"character","attributes":{},"value":["A simple dictionary approach to political text"]},{"type":"character","attributes":{},"value":["html_document"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2120,7 +2123,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Blessing Nsita Inno","description":"Personal academic website created for GV300. \nShowing selected political quantitative analysis and data visualisation work.","authors":[]}
+{"title":"Text Analysis: Dictionary Approach","description":"A simple dictionary approach to political text","authors":[],"publishedDate":"2026-03-20T00:00:00.000+00:00"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2145,23 +2148,94 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Blessing Nsita Inno</h1>
+<h1>Text Analysis: Dictionary Approach</h1>
 
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>Personal academic website created for GV300.
-Showing selected political quantitative analysis and data visualisation work.</p></p>
+<p>A simple dictionary approach to political text</p>
 </div>
 
 
 <div class="d-article">
-<h1 id="welcome">Welcome</h1>
-<p>Hi, I’m Blessing — thank you for visiting my website.</p>
-<p>This site brings together selected pieces of work from my GV300 module, where I explored political data using R and statistical modelling. Rather than simply presenting results, the aim is to show how I think through data: from structuring datasets to interpreting patterns and drawing insightful conclusions.</p>
-<p>I’m particularly interested in how quantitative methods can be used to understand political behaviour and representation in real-world contexts. The showcase page highlights one example of this approach in practice.</p>
-<p>Feel free to explore using the navigation menu above, have fun.</p>
-<p>You can view my featured GV300 showcase using the navigation menu above. Hopefully it runs smoothly!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="text-analysis">Text analysis</h2>
+<p>This section demonstrates a dictionary-based approach to text analysis using short examples of central bank-style communication. The aim is to show how written political and economic language can be transformed into measurable categories such
+as uncertainty, inflation, and output. This approach is useful because it allows researchers to compare themes across
+documents in a systematic and reproducible way.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://quanteda.io'>quanteda</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyr.tidyverse.org'>tidyr</a></span><span class='op'>)</span></span>
+<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span></span></code></pre>
+</div>
+</div>
+<p>Preparing the text</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>## Preparing the text</span></span>
+<span></span>
+<span><span class='va'>texts</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span></span>
+<span>  <span class='st'>"The central bank noted that inflation remains elevated while economic growth shows signs of slowing and uncertainty remains high."</span>,</span>
+<span>  <span class='st'>"Policymakers emphasised that employment levels are improving, although risks to the economic outlook persist."</span>,</span>
+<span>  <span class='st'>"The committee highlighted concerns about inflation pressures and adopted a cautious stance given ongoing uncertainty in global markets."</span></span>
+<span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>txtCorpus</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://quanteda.io/reference/corpus.html'>corpus</a></span><span class='op'>(</span><span class='va'>texts</span><span class='op'>)</span></span>
+<span><span class='va'>tokensFromCorp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://quanteda.io/reference/tokens.html'>tokens</a></span><span class='op'>(</span><span class='va'>txtCorpus</span><span class='op'>)</span></span>
+<span><span class='va'>dfmCorp</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://quanteda.io/reference/dfm.html'>dfm</a></span><span class='op'>(</span><span class='va'>tokensFromCorp</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://quanteda.io/reference/topfeatures.html'>topfeatures</a></span><span class='op'>(</span><span class='va'>dfmCorp</span>, <span class='fl'>10</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>        the           .        that   inflation     remains 
+          3           3           2           2           2 
+   economic         and uncertainty     central        bank 
+          2           2           2           1           1 </code></pre>
+</div>
+<p>Applying a dictionary</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>## Applying a dictionary</span></span>
+<span><span class='va'>econ_dict</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://quanteda.io/reference/dictionary.html'>dictionary</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span></span>
+<span>  uncertainty <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"uncertain"</span>, <span class='st'>"uncertainty"</span>, <span class='st'>"risk"</span>, <span class='st'>"risks"</span>, <span class='st'>"cautious"</span><span class='op'>)</span>,</span>
+<span>  inflation <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"inflation"</span>, <span class='st'>"price"</span>, <span class='st'>"cost"</span><span class='op'>)</span>,</span>
+<span>  output <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"growth"</span>, <span class='st'>"output"</span>, <span class='st'>"employment"</span><span class='op'>)</span></span>
+<span><span class='op'>)</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='va'>dict_results</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://quanteda.io/reference/dfm_lookup.html'>dfm_lookup</a></span><span class='op'>(</span><span class='va'>dfmCorp</span>, dictionary <span class='op'>=</span> <span class='va'>econ_dict</span><span class='op'>)</span></span>
+<span><span class='fu'><a href='https://quanteda.io/reference/convert.html'>convert</a></span><span class='op'>(</span><span class='va'>dict_results</span>, to <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span></span></code></pre>
+</div>
+<pre><code>  doc_id uncertainty inflation output
+1  text1           1         1      1
+2  text2           1         0      1
+3  text3           2         1      0</code></pre>
+</div>
+<p>Visualising dictionary categories</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='co'>## Visualising dictionary categories</span></span>
+<span></span>
+<span><span class='va'>dict_df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://quanteda.io/reference/convert.html'>convert</a></span><span class='op'>(</span><span class='va'>dict_results</span>, to <span class='op'>=</span> <span class='st'>"data.frame"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>dict_df</span><span class='op'>)</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>]</span> <span class='op'>&lt;-</span> <span class='st'>"document"</span></span>
+<span></span>
+<span><span class='va'>dict_df_long</span> <span class='op'>&lt;-</span> <span class='va'>dict_df</span> <span class='op'>|&gt;</span></span>
+<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_longer.html'>pivot_longer</a></span><span class='op'>(</span>cols <span class='op'>=</span> <span class='op'>-</span><span class='va'>document</span>, names_to <span class='op'>=</span> <span class='st'>"category"</span>, values_to <span class='op'>=</span> <span class='st'>"count"</span><span class='op'>)</span></span>
+<span></span>
+<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>dict_df_long</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>category</span>, y <span class='op'>=</span> <span class='va'>count</span>, fill <span class='op'>=</span> <span class='va'>category</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span> <span class='va'>document</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_minimal</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span></span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Dictionary-based text analysis"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Category"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"Word count"</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
+</div>
+<p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="960" /></p>
+</div>
+<p>Interpretation</p>
+<p>The results show how often different economic themes appear across the sample texts. In particular, words related to uncertainty, inflation, and output can be grouped and counted, allowing written statements to be analysed more systematically. This highlights one of the key strengths of text analysis: it turns qualitative language into quantitative evidence that can be compared across documents.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
